@@ -72,10 +72,60 @@ int main() {
         finish_with_error(con);
     }
 
-    // Java 번째 테이블 생성
+    // Java 테이블 생성
     if (mysql_query(con, "CREATE TABLE IF NOT EXISTS Java ("
         "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
         "language_id VARCHAR(10), "
+        "version VARCHAR(100), "
+        "date VARCHAR(100), "
+        "documentation VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
+    // Python 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS Python ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
+        "language_id VARCHAR(10), "
+        "version VARCHAR(100), "
+        "date VARCHAR(100), "
+        "documentation VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
+    // JavaScript 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS JavaScript ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
+        "language_id VARCHAR(10), "
+        "version VARCHAR(100), "
+        "date VARCHAR(100), "
+        "documentation VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
+    // TypeScript 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS TypeScript ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
+        "language_id VARCHAR(10), "
+        "version VARCHAR(100), "
+        "date VARCHAR(100), "
+        "documentation VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
+    // R 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS R ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
+        "language_id VARCHAR(10), "
+        "version VARCHAR(100), "
+        "date VARCHAR(100), "
+        "documentation VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
+    // SQL 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS `SQL` ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, " // Id 필드 : 자동 증가, 기본 키
+        "language_id VARCHAR(20), "
         "version VARCHAR(100), "
         "date VARCHAR(100), "
         "documentation VARCHAR(200))")) {
@@ -106,7 +156,7 @@ int main() {
         finish_with_error(con);
     }
 
-    printf("Data inserted into TestTable2 successfully!\n");*/
+    printf("Data inserted into C successfully!\n");*/
 
     //// C++ 테이블에 데이터 삽입
     //if (mysql_query(con, "INSERT INTO Cpp (language_id, version, date, documentation) VALUES "
@@ -115,7 +165,7 @@ int main() {
     //    finish_with_error(con);
     //}
 
-    //printf("Data inserted into TestTable2 successfully!\n");
+    //printf("Data inserted into C++ successfully!\n");
 
     //// C# 테이블에 데이터 삽입
     //if (mysql_query(con, "INSERT INTO C_Sharp (language_id, version, date, documentation) VALUES "
@@ -124,7 +174,7 @@ int main() {
     //    finish_with_error(con);
     //}
 
-    //printf("Data inserted into TestTable2 successfully!\n");
+    //printf("Data inserted into C# successfully!\n");
 
     // Ruby 테이블에 데이터 삽입
     /*if (mysql_query(con, "INSERT INTO Ruby (language_id, version, date, documentation) VALUES "
@@ -133,7 +183,7 @@ int main() {
         finish_with_error(con);
     }*/
 
-    //printf("Data inserted into TestTable2 successfully!\n");
+    //printf("Data inserted into Ruby successfully!\n");
 
     //// Java 테이블에 데이터 삽입
     //if (mysql_query(con, "INSERT INTO Java (language_id, version, date, documentation) VALUES "
@@ -142,7 +192,52 @@ int main() {
     //    finish_with_error(con);
     //}
 
-    //printf("Data inserted into TestTable2 successfully!\n");
+    //printf("Data inserted into Java successfully!\n");
+
+    //// Python 테이블에 데이터 삽입
+    //if (mysql_query(con, "INSERT INTO Python (language_id, version, date, documentation) VALUES "
+    //    "('6', 'Python 3,13', '2024/10/17', 'minor bug fixed'), "
+    //    "('6', 'Python 3.12', '2023/10/02', 'minor bug fixed')")) {
+    //    finish_with_error(con);
+    //}
+
+    //printf("Data inserted into Python successfully!\n\n");
+
+    //// JavaScript 테이블에 데이터 삽입
+    //if (mysql_query(con, "INSERT INTO JavaScript (language_id, version, date, documentation) VALUES "
+    //    "('7', 'ECMAScript 2023 (ES14)', '2023/06/00', 'Add new method'), "
+    //    "('7', 'ECMAScript 2022 (ES13)', '2022/06/00', 'Fixed Error Class')")) {
+    //    finish_with_error(con);
+    //}
+
+    //printf("Data inserted into TJavaScript successfully!\n\n");
+
+    //// TypeScript 테이블에 데이터 삽입
+    //if (mysql_query(con, "INSERT INTO TypeScript (language_id, version, date, documentation) VALUES "
+    //    "('8', 'TypeScript 5.0', '2023/03/00', 'Turbo Mode'), "
+    //    "('8', 'TypeScript 4.9', '2022/11/00', 'auto-import')")) {
+    //    finish_with_error(con);
+    //}
+
+    //printf("Data inserted into TypeScript successfully!\n\n");
+
+    //// R 테이블에 데이터 삽입
+    //if (mysql_query(con, "INSERT INTO R (language_id, version, date, documentation) VALUES "
+    //    "('9', 'R 4.3.1', '2023/05/03', 'Upgrade'), "
+    //    "('9', 'R 4.2.3', '2023/03/10', 'base R Upgrade')")) {
+    //    finish_with_error(con);
+    //}
+
+    //printf("Data inserted into R successfully!\n\n");
+
+    // SQL 테이블에 데이터 삽입
+    if (mysql_query(con, "INSERT INTO `SQL` (language_id, version, date, documentation) VALUES "
+        "('10', 'MySQL 8.0', '2018/04/00', 'Window Functions'), "
+        "('10', 'MySQL 5.7', '2015/10/00', 'Fixed Full-Text Search')")) {
+        finish_with_error(con);
+    }
+
+    printf("Data inserted into SQL successfully!\n\n");
 
     // Main 데이터 조회
     if (mysql_query(con, "SELECT * FROM Main")) {
@@ -265,11 +360,116 @@ int main() {
     }
 
     printf("Data from java:\n");
-    int num_fields6 = mysql_num_fields(result5);
+    int num_fields6 = mysql_num_fields(result6);
     MYSQL_ROW row6;
     while ((row6 = mysql_fetch_row(result6))) {
         for (int i = 0; i < num_fields6; i++) {
             printf("%s ", row6[i] ? row6[i] : "NULL");
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // Python 테이블 데이터 조회
+    if (mysql_query(con, "SELECT * FROM Python")) {
+        finish_with_error(con);
+    }
+
+    MYSQL_RES* result7 = mysql_store_result(con);
+    if (result7 == NULL) {
+        finish_with_error(con);
+    }
+
+    printf("Data from Python:\n");
+    int num_fields7 = mysql_num_fields(result7);
+    MYSQL_ROW row7;
+    while ((row7 = mysql_fetch_row(result7))) {
+        for (int i = 0; i < num_fields7; i++) {
+            printf("%s ", row7[i] ? row7[i] : "NULL");
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // JavaScript 테이블 데이터 조회
+    if (mysql_query(con, "SELECT * FROM JavaScript")) {
+        finish_with_error(con);
+    }
+
+    MYSQL_RES* result8 = mysql_store_result(con);
+    if (result8 == NULL) {
+        finish_with_error(con);
+    }
+
+    printf("Data from JavaScript:\n");
+    int num_fields8 = mysql_num_fields(result8);
+    MYSQL_ROW row8;
+    while ((row8 = mysql_fetch_row(result8))) {
+        for (int i = 0; i < num_fields8; i++) {
+            printf("%s ", row8[i] ? row8[i] : "NULL");
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // TypeScript 테이블 데이터 조회
+    if (mysql_query(con, "SELECT * FROM TypeScript")) {
+        finish_with_error(con);
+    }
+
+    MYSQL_RES* result9 = mysql_store_result(con);
+    if (result9 == NULL) {
+        finish_with_error(con);
+    }
+
+    printf("Data from TypeScript:\n");
+    int num_fields9 = mysql_num_fields(result9);
+    MYSQL_ROW row9;
+    while ((row9 = mysql_fetch_row(result9))) {
+        for (int i = 0; i < num_fields9; i++) {
+            printf("%s ", row9[i] ? row9[i] : "NULL");
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // R 테이블 데이터 조회
+    if (mysql_query(con, "SELECT * FROM R")) {
+        finish_with_error(con);
+    }
+
+    MYSQL_RES* result10 = mysql_store_result(con);
+    if (result10 == NULL) {
+        finish_with_error(con);
+    }
+
+    printf("Data from R:\n");
+    int num_fields10 = mysql_num_fields(result10);
+    MYSQL_ROW row10;
+    while ((row10 = mysql_fetch_row(result10))) {
+        for (int i = 0; i < num_fields10; i++) {
+            printf("%s ", row10[i] ? row10[i] : "NULL");
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // SQL 테이블 데이터 조회
+    if (mysql_query(con, "SELECT * FROM `SQL`")) {
+        finish_with_error(con);
+    }
+
+    MYSQL_RES* result11 = mysql_store_result(con);
+    if (result11 == NULL) {
+        finish_with_error(con);
+    }
+
+    printf("Data from SQL:\n");
+    int num_fields11 = mysql_num_fields(result11);
+    MYSQL_ROW row11;
+    while ((row11 = mysql_fetch_row(result11))) {
+        for (int i = 0; i < num_fields11; i++) {
+            printf("%s ", row11[i] ? row11[i] : "NULL");
         }
         printf("\n");
     }
