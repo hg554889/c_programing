@@ -105,6 +105,15 @@ int main() {
         finish_with_error(con);
     }
 
+    // IDE 테이블 생성
+    if (mysql_query(con, "CREATE TABLE IF NOT EXISTS IDE ("
+        "id INT AUTO_INCREMENT PRIMARY KEY, "
+        "name VARCHAR(100), "
+        "language VARCHAR(100), "
+        "Description VARCHAR(200))")) {
+        finish_with_error(con);
+    }
+
     // 다른 언어별 테이블 생성 (외래 키 포함)
     const char* create_table_queries[] = {
         "CREATE TABLE IF NOT EXISTS C ("
@@ -192,6 +201,19 @@ int main() {
         if (mysql_query(con, create_table_queries[i])) {
             finish_with_error(con);
         }
+    }
+
+    // IDE 테이블에 데이터 삽입
+    if (mysql_query(con, "INSERT INTO IDE (name, language, Description) VALUES "
+        "('Pycharm', 'Python', 'Intelligent Python fro data & code'), "
+        "('IntelliJ', 'Java, Kotlin', 'Smart Java & Kotrlin, code with power'), "
+        "('GoLand', 'Go', 'Go development, elevated'), "
+        "('Rider', 'Go, Javascript, Typescript', '.NET & game dev, unleashed'), "
+        "('CLion', 'C, C++', 'C/C++ coding, clear and concise'), "
+        "('RustRover', 'Rust, SQL, Javascript', 'Rust development, safe and efficient'), "
+        "('WebStrom', 'Javascript, Typescript', 'Javascript & Typescript mastered'), "
+        "('RubyMine', 'Ruby, Rails', 'Ruby & Rails, reifned and radiant')")) {
+        finish_with_error(con);
     }
 
     // Main 테이블에 데이터 삽입
@@ -328,6 +350,7 @@ int main() {
     query_and_print_table(con, "TypeScript");
     query_and_print_table(con, "R");
     query_and_print_table(con, "MySQL");
+    query_and_print_table(con, "IDE");
 
     mysql_close(con); // MySQL 연결 종료
     return 0; // 프로그램 정상 종료
