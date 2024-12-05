@@ -205,19 +205,19 @@ int main() {
 
     // IDE 테이블에 데이터 삽입
     if (mysql_query(con, "INSERT INTO IDE (name, language, Description) VALUES "
-        "('Pycharm', 'Python', 'Intelligent Python fro data & code'), "
+        "('PyCharm', 'Python', 'Intelligent Python for data & code'), "
         "('IntelliJ', 'Java, Kotlin', 'Smart Java & Kotrlin, code with power'), "
         "('GoLand', 'Go', 'Go development, elevated'), "
-        "('Rider', 'Go, Javascript, Typescript', '.NET & game dev, unleashed'), "
+        "('Rider', 'Go, JavaScript, TypeScript', '.NET & game dev, unleashed'), "
         "('CLion', 'C, C++', 'C/C++ coding, clear and concise'), "
-        "('RustRover', 'Rust, SQL, Javascript', 'Rust development, safe and efficient'), "
-        "('WebStrom', 'Javascript, Typescript', 'Javascript & Typescript mastered'), "
+        "('RustRover', 'Rust, SQL, JavaScript', 'Rust development, safe and efficient'), "
+        "('WebStrom', 'JavaScript, TypeScript', 'JavaScript & TypeScript mastered'), "
         "('RubyMine', 'Ruby, Rails', 'Ruby & Rails, reifned and radiant')")) {
         finish_with_error(con);
     }
 
     // Main 테이블에 데이터 삽입
-    if (mysql_query(con, "INSERT INTO Main (language, Front_Back) VALUES "
+    /*if (mysql_query(con, "INSERT INTO Main (language, Front_Back) VALUES "
         "('C', 'Backend'), "
         "('C++', 'Backend'), "
         "('C#', 'Backend'), "
@@ -231,112 +231,112 @@ int main() {
         finish_with_error(con);
     }
 
-    printf("Main data inserted successfully!\n");
+    printf("Main data inserted successfully!\n");*/
 
     // 각 언어별로 id 값을 가져와서 버전 데이터 삽입
-    int language_id;
+    /*int language_id;*/
 
-    // C 테이블 데이터 삽입
-    language_id = get_language_id(con, "C");
-    if (language_id > 0) {
-        /*insert_version_data(con, "C", language_id, "C23", "2023/07/28", "New version of C23");
-        insert_version_data(con, "C", language_id, "C17", "2017/01/15", "New version of C17");*/
-        insert_version_data(con, "C", language_id, "C11", "2011/12/07", "_Thread_local, atomic library");
-        insert_version_data(con, "C", language_id, "C99", "1999/06/06", "created annotation line");
-        insert_version_data(con, "C", language_id, "C90", "1990/10/00", "A clear Norm of C");
-    }
+    //// C 테이블 데이터 삽입
+    //language_id = get_language_id(con, "C");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "C", language_id, "C23", "2023/07/28", "New version of C23");
+    //    insert_version_data(con, "C", language_id, "C17", "2017/01/15", "New version of C17");*/
+    //    insert_version_data(con, "C", language_id, "C11", "2011/12/07", "_Thread_local, atomic library");
+    //    insert_version_data(con, "C", language_id, "C99", "1999/06/06", "created annotation line");
+    //    insert_version_data(con, "C", language_id, "C90", "1990/10/00", "A clear Norm of C");
+    //}
 
-    // C++ 테이블 데이터 삽입
-    language_id = get_language_id(con, "C++");
-    if (language_id > 0) {
-        /*insert_version_data(con, "Cpp", language_id, "Cpp23", "2023/07/28", "New version of Cpp23");
-        insert_version_data(con, "Cpp", language_id, "Cpp17", "2017/01/15", "New version of Cpp17");*/
-        insert_version_data(con, "Cpp", language_id, "Cpp20", "2020/12/15", "Add ranges libreary");
-        insert_version_data(con, "Cpp", language_id, "Cpp14", "2014/12/15", "Updated lamda function");
-        insert_version_data(con, "Cpp", language_id, "Cpp11", "2011/08/12", "Add smart pointer");
-    }
+    //// C++ 테이블 데이터 삽입
+    //language_id = get_language_id(con, "C++");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "Cpp", language_id, "Cpp23", "2023/07/28", "New version of Cpp23");
+    //    insert_version_data(con, "Cpp", language_id, "Cpp17", "2017/01/15", "New version of Cpp17");*/
+    //    insert_version_data(con, "Cpp", language_id, "Cpp20", "2020/12/15", "Add ranges libreary");
+    //    insert_version_data(con, "Cpp", language_id, "Cpp14", "2014/12/15", "Updated lamda function");
+    //    insert_version_data(con, "Cpp", language_id, "Cpp11", "2011/08/12", "Add smart pointer");
+    //}
 
-    // C# 테이블 데이터 삽입
-    language_id = get_language_id(con, "C#");
-    if (language_id > 0) {
-        /*insert_version_data(con, "C_Sharp", language_id, "C# 12.0", "2023/11/00", ".NET 8");
-        insert_version_data(con, "C_Sharp", language_id, "C# 11.0", "2022/11/00", ".NET 7");*/
-        insert_version_data(con, "C_Sharp", language_id, "C# 10", "2021/11/08", "Update record type");
-        insert_version_data(con, "C_Sharp", language_id, "C# 9", "2020/11/10", "Add init-only type");
-        insert_version_data(con, "C_Sharp", language_id, "C# 8", "2019/09/23", "Asynchronous Streams and Nullable reference types");
-    }
+    //// C# 테이블 데이터 삽입
+    //language_id = get_language_id(con, "C#");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "C_Sharp", language_id, "C# 12.0", "2023/11/00", ".NET 8");
+    //    insert_version_data(con, "C_Sharp", language_id, "C# 11.0", "2022/11/00", ".NET 7");*/
+    //    insert_version_data(con, "C_Sharp", language_id, "C# 10", "2021/11/08", "Update record type");
+    //    insert_version_data(con, "C_Sharp", language_id, "C# 9", "2020/11/10", "Add init-only type");
+    //    insert_version_data(con, "C_Sharp", language_id, "C# 8", "2019/09/23", "Asynchronous Streams and Nullable reference types");
+    //}
 
-    // Ruby 테이블 데이터 삽입
-    language_id = get_language_id(con, "Ruby");
-    if (language_id > 0) {
-        /*insert_version_data(con, "Ruby", language_id, "Ruby 3.3.6", "2024/11/05", "Minor bug fixed");
-        insert_version_data(con, "Ruby", language_id, "Ruby 3.2.6", "2024/10/30", "Improve base time of assert_linear");*/
-        insert_version_data(con, "Ruby", language_id, "Ruby 3.3.0", "2023/11/22", "Update of RBS, new JIT compiler");
-        insert_version_data(con, "Ruby", language_id, "Ruby 3.2.0", "2022/12/25", "Objects shapes, add Data class");
-        insert_version_data(con, "Ruby", language_id, "Ruby 3.1.0", "2021/12/25", "ADD YJIT(Yet another JIT)");
-    }
+    //// Ruby 테이블 데이터 삽입
+    //language_id = get_language_id(con, "Ruby");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "Ruby", language_id, "Ruby 3.3.6", "2024/11/05", "Minor bug fixed");
+    //    insert_version_data(con, "Ruby", language_id, "Ruby 3.2.6", "2024/10/30", "Improve base time of assert_linear");*/
+    //    insert_version_data(con, "Ruby", language_id, "Ruby 3.3.0", "2023/11/22", "Update of RBS, new JIT compiler");
+    //    insert_version_data(con, "Ruby", language_id, "Ruby 3.2.0", "2022/12/25", "Objects shapes, add Data class");
+    //    insert_version_data(con, "Ruby", language_id, "Ruby 3.1.0", "2021/12/25", "ADD YJIT(Yet another JIT)");
+    //}
 
-    // Java 테이블 데이터 삽입
-    language_id = get_language_id(con, "Java");
-    if (language_id > 0) {
-        insert_version_data(con, "Java", language_id, "Java 21", "2023/09/19", "Virtual Thread and Record Patterns");
-        insert_version_data(con, "Java", language_id, "Java 20", "2023/03/21", "Scoped Values and Structured Concurrency");
-        insert_version_data(con, "Java", language_id, "Java 19", "2022/09/20", "Pattern Matching and Foreign Function & Memory API");
-        insert_version_data(con, "Java", language_id, "Java 17", "2021/09/14", "Sealed Classes and Switch Expressions");
-        insert_version_data(con, "Java", language_id, "Java 11", "2018/09/25", "var keyword and new HTTP Client API");
-    }
+    //// Java 테이블 데이터 삽입
+    //language_id = get_language_id(con, "Java");
+    //if (language_id > 0) {
+    //    insert_version_data(con, "Java", language_id, "Java 21", "2023/09/19", "Virtual Thread and Record Patterns");
+    //    insert_version_data(con, "Java", language_id, "Java 20", "2023/03/21", "Scoped Values and Structured Concurrency");
+    //    insert_version_data(con, "Java", language_id, "Java 19", "2022/09/20", "Pattern Matching and Foreign Function & Memory API");
+    //    insert_version_data(con, "Java", language_id, "Java 17", "2021/09/14", "Sealed Classes and Switch Expressions");
+    //    insert_version_data(con, "Java", language_id, "Java 11", "2018/09/25", "var keyword and new HTTP Client API");
+    //}
 
-    // Python 테이블 데이터 삽입
-    language_id = get_language_id(con, "Python");
-    if (language_id > 0) {
-        /*insert_version_data(con, "Python", language_id, "Python 3.13", "2024/10/17", "Minor bug fixed");
-        insert_version_data(con, "Python", language_id, "Python 3.12", "2023/10/02", "Minor bug fixed");*/
-        insert_version_data(con, "Python", language_id, "Python 3.11", "2022/10/24", "Exception group and bug fix");
-        insert_version_data(con, "Python", language_id, "Python 3.10", "2021/10/04", "Structural pattern matching");
-        insert_version_data(con, "Python", language_id, "Python 3.9", "2020/10/05", "Add zoneinfo mudule");
-    }
+    //// Python 테이블 데이터 삽입
+    //language_id = get_language_id(con, "Python");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "Python", language_id, "Python 3.13", "2024/10/17", "Minor bug fixed");
+    //    insert_version_data(con, "Python", language_id, "Python 3.12", "2023/10/02", "Minor bug fixed");*/
+    //    insert_version_data(con, "Python", language_id, "Python 3.11", "2022/10/24", "Exception group and bug fix");
+    //    insert_version_data(con, "Python", language_id, "Python 3.10", "2021/10/04", "Structural pattern matching");
+    //    insert_version_data(con, "Python", language_id, "Python 3.9", "2020/10/05", "Add zoneinfo mudule");
+    //}
 
-    // JavaScript 테이블 데이터 삽입
-    language_id = get_language_id(con, "JavaScript");
-    if (language_id > 0) {
-        /*insert_version_data(con, "JavaScript", language_id, "ECMAScript 2023 (ES14)", "2023/06/00", "Add new method");
-        insert_version_data(con, "JavaScript", language_id, "ECMAScript 2022 (ES13)", "2022/06/00", "Fixed Error Class");*/
-        insert_version_data(con, "JavaScript", language_id, "ECMAScript 2021 (ES12)", "2021/06/00", "String.replaceAll method");
-        insert_version_data(con, "JavaScript", language_id, "ECMAScript 2020 (ES11)", "2020/06/00", "Optional Chaining");
-        insert_version_data(con, "JavaScript", language_id, "ECMAScript 2019 (ES10)", "2019/06/00", "Array.flat and Array.flatMap");
-    }
+    //// JavaScript 테이블 데이터 삽입
+    //language_id = get_language_id(con, "JavaScript");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "JavaScript", language_id, "ECMAScript 2023 (ES14)", "2023/06/00", "Add new method");
+    //    insert_version_data(con, "JavaScript", language_id, "ECMAScript 2022 (ES13)", "2022/06/00", "Fixed Error Class");*/
+    //    insert_version_data(con, "JavaScript", language_id, "ECMAScript 2021 (ES12)", "2021/06/00", "String.replaceAll method");
+    //    insert_version_data(con, "JavaScript", language_id, "ECMAScript 2020 (ES11)", "2020/06/00", "Optional Chaining");
+    //    insert_version_data(con, "JavaScript", language_id, "ECMAScript 2019 (ES10)", "2019/06/00", "Array.flat and Array.flatMap");
+    //}
 
-    // TypeScript 테이블 데이터 삽입
-    language_id = get_language_id(con, "TypeScript");
-    if (language_id > 0) {
-        /*insert_version_data(con, "TypeScript", language_id, "TypeScript 5.0", "2023/03/00", "Turbo Mode");
-        insert_version_data(con, "TypeScript", language_id, "TypeScript 4.9", "2022/11/00", "Auto-import");*/
-        insert_version_data(con, "TypeScript", language_id, "TypeScript 4.8", "2022/08/00", "Exact Optional Property Types");
-        insert_version_data(con, "TypeScript", language_id, "TypeScript 4.7", "2022/05/00", "ECMAScript Module Support in Node.js");
-        insert_version_data(con, "TypeScript", language_id, "TypeScript 4.6", "2022/02/00", "Control Flow Analysis for Destructured Discriminated Unions");
-    }
+    //// TypeScript 테이블 데이터 삽입
+    //language_id = get_language_id(con, "TypeScript");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "TypeScript", language_id, "TypeScript 5.0", "2023/03/00", "Turbo Mode");
+    //    insert_version_data(con, "TypeScript", language_id, "TypeScript 4.9", "2022/11/00", "Auto-import");*/
+    //    insert_version_data(con, "TypeScript", language_id, "TypeScript 4.8", "2022/08/00", "Exact Optional Property Types");
+    //    insert_version_data(con, "TypeScript", language_id, "TypeScript 4.7", "2022/05/00", "ECMAScript Module Support in Node.js");
+    //    insert_version_data(con, "TypeScript", language_id, "TypeScript 4.6", "2022/02/00", "Control Flow Analysis for Destructured Discriminated Unions");
+    //}
 
-    // R 테이블 데이터 삽입
-    language_id = get_language_id(con, "R");
-    if (language_id > 0) {
-        /*insert_version_data(con, "R", language_id, "R 4.3.1", "2023/05/03", "Upgrade");
-        insert_version_data(con, "R", language_id, "R 4.2.3", "2023/03/10", "Base R Upgrade");*/
-        insert_version_data(con, "R", language_id, "R 4.2.2", "2022/10/31", "Improved Performance");
-        insert_version_data(con, "R", language_id, "R 4.2.1", "2022/06/23", "Windows Memory Optimization");
-        insert_version_data(con, "R", language_id, "R 4.1.3", "2022/03/10", "Bug Fixes and Improvements");
-    }
+    //// R 테이블 데이터 삽입
+    //language_id = get_language_id(con, "R");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "R", language_id, "R 4.3.1", "2023/05/03", "Upgrade");
+    //    insert_version_data(con, "R", language_id, "R 4.2.3", "2023/03/10", "Base R Upgrade");*/
+    //    insert_version_data(con, "R", language_id, "R 4.2.2", "2022/10/31", "Improved Performance");
+    //    insert_version_data(con, "R", language_id, "R 4.2.1", "2022/06/23", "Windows Memory Optimization");
+    //    insert_version_data(con, "R", language_id, "R 4.1.3", "2022/03/10", "Bug Fixes and Improvements");
+    //}
 
-    // SQL 테이블 데이터 삽입
-    language_id = get_language_id(con, "MySQL");
-    if (language_id > 0) {
-        /*insert_version_data(con, "MySQL", language_id, "MySQL 8.0", "2018/04/00", "Window Functions");
-        insert_version_data(con, "MySQL", language_id, "MySQL 5.7", "2015/10/00", "Fixed Full-Text Search");*/
-        insert_version_data(con, "MySQL", language_id, "MySQL 5.6", "2013/02/05", "InnoDB Full-Text Search");
-        insert_version_data(con, "MySQL", language_id, "MySQL 5.5", "2010/12/03", "Semi-Synchronous Replication");
-        insert_version_data(con, "MySQL", language_id, "MySQL 5.1", "2008/11/14", "Partitioning and Event Scheduler");
-    }
+    //// SQL 테이블 데이터 삽입
+    //language_id = get_language_id(con, "MySQL");
+    //if (language_id > 0) {
+    //    /*insert_version_data(con, "MySQL", language_id, "MySQL 8.0", "2018/04/00", "Window Functions");
+    //    insert_version_data(con, "MySQL", language_id, "MySQL 5.7", "2015/10/00", "Fixed Full-Text Search");*/
+    //    insert_version_data(con, "MySQL", language_id, "MySQL 5.6", "2013/02/05", "InnoDB Full-Text Search");
+    //    insert_version_data(con, "MySQL", language_id, "MySQL 5.5", "2010/12/03", "Semi-Synchronous Replication");
+    //    insert_version_data(con, "MySQL", language_id, "MySQL 5.1", "2008/11/14", "Partitioning and Event Scheduler");
+    //}
 
-    printf("All data inserted successfully!\n");
+    //printf("All data inserted successfully!\n");
 
     // 데이터 조회
     query_and_print_table(con, "Main");
