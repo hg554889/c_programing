@@ -92,7 +92,7 @@ void print_ide_menu() {
 	printf("4. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("Rider"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
 	printf("5. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("CLion"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
 	printf("6. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("RustRover"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
-	printf("7. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("Webstrom"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
+	printf("7. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("WebStorm"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
 	printf("8. "); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY); printf("RubyMine"); set_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); printf("\n");
 	set_color(FOREGROUND_RED | FOREGROUND_INTENSITY);
 	printf("0. 뒤로 가기\n");
@@ -309,7 +309,7 @@ int main(int argc, char** argv) {
 						snprintf(query_ide, sizeof(query_ide), "SELECT name, language, Description FROM IDE WHERE name = 'RustRover'");
 						break;
 					case 7:
-						snprintf(query_ide, sizeof(query_ide), "SELECT name, language, Description FROM IDE WHERE name = 'Webstrom'");
+						snprintf(query_ide, sizeof(query_ide), "SELECT name, language, Description FROM IDE WHERE name = 'WebStorm'");
 						break;
 					case 8:
 						snprintf(query_ide, sizeof(query_ide), "SELECT name, language, Description FROM IDE WHERE name = 'RubyMine'");
